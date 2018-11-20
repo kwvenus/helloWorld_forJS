@@ -41,22 +41,22 @@ function alignSpaceCount(startNumber, endNumber){
 
 function prepareMultiplicationTable(multiplicationCombination){
     let i, j;
-    let ans = '';
+    let multiplicationTable = '';
     let tempSpace = '';
     let lastElement = multiplicationCombination[(multiplicationCombination.length)-1];
     const finalSpace = alignSpaceCount(lastElement.startCombinationNumber, lastElement.endCombinationNumber);
 
     for (i = 0; i < multiplicationCombination.length; i++){
-        ans += multiplicationCombination[i].startCombinationNumber + "*" + multiplicationCombination[i].endCombinationNumber + "=" + (multiplicationCombination[i].endCombinationNumber * multiplicationCombination[i].startCombinationNumber);
+        multiplicationTable += multiplicationCombination[i].startCombinationNumber + "*" + multiplicationCombination[i].endCombinationNumber + "=" + (multiplicationCombination[i].endCombinationNumber * multiplicationCombination[i].startCombinationNumber);
 
             tempSpace = alignSpaceCount(multiplicationCombination[i].startCombinationNumber, multiplicationCombination[i].endCombinationNumber);
             for (j = 0; j <= (finalSpace-tempSpace+1); j++){
-                ans += ' ';
+                multiplicationTable += ' ';
             }
         if (i != (multiplicationCombination.length)-1 && multiplicationCombination[i].startCombinationNumber == multiplicationCombination[i].endCombinationNumber)
-            ans += "\n";
+            multiplicationTable += "\n";
     }
-    return ans;
+    return multiplicationTable;
 }
 
 
