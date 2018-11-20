@@ -18,7 +18,21 @@ function areNumberWithInTheRange(startNumber, endNumber){
     }
 }
 
+
+function findMultiplicationCombination(startNumber, endNumber){
+    let multiplicationCombination = [];
+    let i, j;
+
+    for (i = startNumber; i <= endNumber; i++){
+        for (j = startNumber; j <= i; j++){
+            multiplicationCombination.push({startCombinationNumber: j, endCombinationNumber: i});
+        }
+    }
+    return multiplicationCombination;
+}
+
 module.exports = {
     isStartNumberSmallerThenOrEqualToEndNumber,
-    areNumberWithInTheRange
+    areNumberWithInTheRange,
+    findMultiplicationCombination
 };
